@@ -7,7 +7,10 @@ Route::get('/', function()
 {
     return 'Pantalla principal';
 });
-
+route::get('/home/{nombre}', function($nombre)
+{
+    return view('home', ['nombre' => $nombre]);
+});
 
 Route::get('/login', function()
 {
