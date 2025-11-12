@@ -7,9 +7,15 @@ Route::get('/', function()
 {
     return view('home');
 });
- route::get('/home/{nombre}', function($nombre)
-{
-    return view('home', ['nombre' => $nombre]);
+
+Route::get('/users', function () {
+    return view('users.usersList', [
+        'users' => [
+            ['id' => 1, 'name' => 'Ana'],
+            ['id' => 2, 'name' => 'Luis'],
+            ['id' => 3, 'name' => 'Carlos']
+        ]
+    ]);
 });
 
 Route::get('/login', function()
